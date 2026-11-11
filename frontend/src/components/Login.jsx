@@ -25,7 +25,7 @@ const Login = () => {
     e.preventDefault();
     setLoading(true);
     try{
-      const res=await axios.post('http://localhost:8000/api/v1/user/login', input,{
+      const res=await axios.post('https://social-media-website-instagram-clone.onrender.com/api/v1/user/login', input,{
         headers:{
           'Content-Type':'application/json'
 

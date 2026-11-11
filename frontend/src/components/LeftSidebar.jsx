@@ -25,7 +25,7 @@ const LeftSidebar = () => {
     const [messagePopoverOpen,setMessagePopoverOpen]=useState(false);
     const logoutHandler=async()=>{
         try{
-            const res=await axios.get('http://localhost:8000/api/v1/user/logout',{
+            const res=await axios.get('https://social-media-website-instagram-clone.onrender.com/api/v1/user/logout',{
                 withCredentials:true
             });
             if(res.data.success){

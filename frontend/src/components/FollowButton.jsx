@@ -21,7 +21,7 @@ const FollowButton = ({ targetUser }) => {
         setIsLoading(true);
         try {
             const res = await axios.post(
-                `http://localhost:8000/api/v1/user/followorunfollow/${targetUser._id}`,
+                `https://social-media-website-instagram-clone.onrender.com/api/v1/user/followorunfollow/${targetUser._id}`,
                 {},
                 { withCredentials: true }
             );

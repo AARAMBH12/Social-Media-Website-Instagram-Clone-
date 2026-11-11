@@ -59,7 +59,7 @@ const App = () => {
   useEffect(()=>{
     if (!user) return;
 
-    const socketio=io('http://localhost:8000',{
+    const socketio=io('https://social-media-website-instagram-clone.onrender.com',{
       autoConnect:false,
       query:{
         userId:user?._id

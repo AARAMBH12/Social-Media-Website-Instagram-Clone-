@@ -10,7 +10,7 @@ const useGetSuggestedUsers=()=>{
     useEffect(()=>{
         const fetchSuggestedUsers=async()=>{
             try {
-                const res=await axios.get("http://localhost:8000/api/v1/user/suggested",{withCredentials:true});
+                const res=await axios.get("https://social-media-website-instagram-clone.onrender.com/api/v1/user/suggested",{withCredentials:true});
                 if(res.data.success){
                   if (!Array.isArray(res.data.users)) {
                     toast.error("Unable to load suggested users. Please try again.");

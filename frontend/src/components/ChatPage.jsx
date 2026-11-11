@@ -32,7 +32,7 @@ const ChatPage = () => {
         setTextMessage("");
 
         try {
-            const res=await axios.post(`http://localhost:8000/api/v1/message/send/${receiverId}`,{textMessage:messageText},{
+            const res=await axios.post(`https://social-media-website-instagram-clone.onrender.com/api/v1/message/send/${receiverId}`,{textMessage:messageText},{
                 headers:{
                   "Content-Type":'application/json'
                 },

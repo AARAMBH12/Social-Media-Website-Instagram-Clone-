@@ -52,7 +52,7 @@ const CreatePost = ({ open, setOpen }) => {
        formData.append("image",file);
         try {
             setLoading(true);
-            const res=await axios.post('http://localhost:8000/api/v1/post/addpost',formData,{
+            const res=await axios.post('https://social-media-website-instagram-clone.onrender.com/api/v1/post/addpost',formData,{
                 withCredentials:true,
             });
             if(res.data.success){

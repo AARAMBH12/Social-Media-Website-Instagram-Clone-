@@ -73,7 +73,7 @@ const Post = ({ post }) => {
       const action = wasLiked ? 'dislike' : 'like';
 
       const res = await axios.get(
-        `http://localhost:8000/api/v1/post/${post._id}/${action}`,
+        `https://social-media-website-instagram-clone.onrender.com/api/v1/post/${post._id}/${action}`,
         { withCredentials: true }
       );
 
@@ -109,7 +109,7 @@ const Post = ({ post }) => {
       setIsCommenting(true);
 
       const res = await axios.post(
-        `http://localhost:8000/api/v1/post/${post._id}/comment`,
+        `https://social-media-website-instagram-clone.onrender.com/api/v1/post/${post._id}/comment`,
         { text: text.trim() },
         {
           headers: {
@@ -153,7 +153,7 @@ const Post = ({ post }) => {
   const deletePostHandler = async () => {
     try {
       const res = await axios.delete(
-        `http://localhost:8000/api/v1/post/delete/${post._id}`,
+        `https://social-media-website-instagram-clone.onrender.com/api/v1/post/delete/${post._id}`,
         { withCredentials: true }
       );
 
@@ -182,7 +182,7 @@ const Post = ({ post }) => {
     if(isBookmarking) return;
     setIsBookmarking(true);
     try {
-      const res=await axios.get(`http://localhost:8000/api/v1/post/${post?._id}/bookmark`,{withCredentials:true});
+      const res=await axios.get(`https://social-media-website-instagram-clone.onrender.com/api/v1/post/${post?._id}/bookmark`,{withCredentials:true});
       if(res.data.success){
         dispatch(updateBookmarkState({
           post,
