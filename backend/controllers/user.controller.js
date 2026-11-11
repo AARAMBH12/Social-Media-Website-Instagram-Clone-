@@ -90,6 +90,27 @@ export const login=async(req,res)=>{
         });
     }
 }
+export const getCurrentUser=async(req,res)=>{
+    try {
+        const user=await User.findById(req.id).select("-password");
+        if(!user){
+            return res.status(401).json({
+                message:"User not authenticated",
+                success:false,
+            });
+        }
+        return res.status(200).json({
+            user,
+            success:true,
+        });
+    } catch (error) {
+        console.error("Failed to get current user:", error);
+        return res.status(500).json({
+            message:"Failed to verify user session",
+            success:false,
+        });
+    }
+}
 export const logout = async (_, res) => {
     try {
         return res.cookie("token", "", { maxAge: 0 }).json({
